@@ -1,0 +1,17 @@
+.button-component-css {
+    padding: 20px !important;
+    .MuiButton-root{
+        width: 150px;
+        border-radius: 13px !important;
+    }
+    .MuiButton-contained {
+        background-color: green !important;
+    }
+    .MuiButton-text {
+        background-color: #49A078;
+        color: white;
+    }
+    .MuiButton-text:hover{
+        background-color: #9CC5A1;
+    }
+}

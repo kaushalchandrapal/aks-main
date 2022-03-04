@@ -1,0 +1,24 @@
+.header-component-css {
+    .bg-dark {
+        background-color: #1F2421 !important;
+    }
+    .navbar-light {
+        .navbar-brand {
+            color: #DCE1DE;
+        }
+    }
+    .navbar-light {
+        .navbar-nav {
+            .nav-link {
+                color: #216869;
+            }
+        }
+    }
+    .navbar-light {
+        .navbar-nav {
+            .nav-link:hover {
+                color: #49A078;
+            }
+        }
+    }
+}

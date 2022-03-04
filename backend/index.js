@@ -30,7 +30,7 @@ app.post('/addContact', async (request, response) => {
         const success = "Contact Successfully Added!";
         response.status(200).json({success});
     } catch (error) {
-        response.status(500).json(error);
+        response.status(400).json(error);
     }
 })
 
@@ -41,6 +41,21 @@ app.get("/allContact", async(req, res) => {
        } catch (error) {
            res.status(500).json(error);
        }
+   })
+
+   app.post("/postcontact", async(req, res) => {
+    try {
+        const { id } = req.body;
+           const allContact = await pool.query("Select * from contactbook where id =$1",[id]);
+           if (allContact.rows.length > 0) {
+            res.status(200).json(allContact.rows[0]);
+         } else {
+            const Message = "Contact not found!";
+            res.status(404).json({ Message });
+         }
+     } catch (error) {
+        res.status(500).json(error);
+     }
    })
 
 app.listen(8080, ()=>{
